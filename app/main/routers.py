@@ -96,8 +96,8 @@ async def fun2(message: types.Message, state: FSMContext):
         await bot.delete_message(chat_id=message.from_user.id, message_id=del_msg.message_id)
 
 
-# @router.callback_query(F.data == "advertising")
-# async def advertising(callback: types.CallbackQuery):
-#     await callback.message.answer(
-#         "Это здорово!",
-#     )
+@router.callback_query(F.data == "advertising")
+async def advertising(callback: types.CallbackQuery):
+    await callback.message.answer(
+        "По поводу рекламы писать: @sls212",
+    )
